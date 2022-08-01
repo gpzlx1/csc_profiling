@@ -10,6 +10,7 @@ include_directories("src")
 add_library(csc_profiling SHARED
     src/hello_world.cu
     src/csc_filter_indptr.cu
+    src/csc_filter_indices.cu
     )
 
 set_target_properties(csc_profiling PROPERTIES CUDA_ARCHITECTURES "86")
