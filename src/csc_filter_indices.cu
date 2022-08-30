@@ -19,7 +19,7 @@ __global__ void csc_filter_indices_kernel(
     int laneid = group.thread_rank();
 
     IdType out_row = blockIdx.x * TILE_SIZE + threadIdx.y;
-    IdType last_row = MIN(static_cast<IdType>(blockDim.x + 1) * TILE_SIZE, num_items);
+    IdType last_row = MIN(static_cast<IdType>(blockIdx.x + 1) * TILE_SIZE, num_items);
 
     while(out_row < last_row){
         int true_count = 0;
